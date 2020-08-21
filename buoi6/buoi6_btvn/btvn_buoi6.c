@@ -23,7 +23,7 @@ int main() {
 	printf("\r\n");
 	printf("so ki tu chuoi str : %d\r\n",stringlen(str));
 
-	char target [] = "MOTOR";
+	char target [] = "FAN";
 	char target1[]= "ON";
 	char target2[]= "OFF";
 	char target3[]= "\"";
@@ -31,21 +31,24 @@ int main() {
 	char *sub;
 	char *sub2; 
 	char *sub3;
-  	
+	// dia chi cua F FAN
   sub = strstr(str, target);
+  // dia chi cua \" dau tien 
   sub2 = strstr(sub+stringlen(target)+1,target3);
+  // dia chi cua \" cuoi cung 
   sub3 = strstr(sub2+2,target3);
-  printf("\ndia chi 2 : %x\r\n", sub2);
-  printf("\ndia chi 3 : %x\r\n", sub3);
+  
+  printf("\ndia chi dau trang thai : %x\r\n", sub2);
+  printf("\ndia chi cuoi trang thai : %x\r\n", sub3);
+  // kiem tra xem target co trong str ko ?
   if(sub==0)
   {
   	printf("\n%s khong co trong chuoi\r\n",target);
   	return 0;
   }
-  
   else
   printf("\ndia chi F \"FAN\" : %x\r\n", sub);
-  
+  // tim cac vi tri dac biet
   for(i=0;i<stringlen(str);i++)
   {
 	if(&str[i]==sub)
@@ -64,6 +67,7 @@ int main() {
 	}
 	
   }
+  // tim cac ki tu trang thai trong chuoi str
   	for(i =0;i<strlen(str);i++)
   	{
 	  if(&str[i]>=sub2)
@@ -73,15 +77,13 @@ int main() {
 			status [k]=str[i];
 			k++;
 	  		}
-		  }
-	  
+		  }  
 	}
-	
-  	printf("do dai chuoi st %d\r\n ",stringlen(status));
+	// in ra ket qua 
+  	printf("do dai chuoi chua trang thai %d\r\n ",stringlen(status));
   	printf("trang thai FAN : ");
 	printf(status);
 	printf("\r\n");
-	
 	
   return 0;
 }
