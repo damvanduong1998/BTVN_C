@@ -81,7 +81,7 @@ void main()
 	
 	
 	printf("\nhanh kiem \r\n1 : gioi\r\n2 : kha\r\n3 : trung binh\r\n");
-	nhapX(&a, n);
-	xuatX(&a, n);
+	nhapX(a, n);
+	xuatX(a, n);
 
 }
