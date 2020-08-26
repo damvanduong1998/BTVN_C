@@ -78,10 +78,10 @@ void main()
 	hs *a;
 	printf("nhap so hoc sinh = ");
 	scanf_s("%d", &n);
-	
-	
+	a = (hs*)malloc(100 * sizeof(hs));
 	printf("\nhanh kiem \r\n1 : gioi\r\n2 : kha\r\n3 : trung binh\r\n");
+
 	nhapX(a, n);
 	xuatX(a, n);
-
+	free(a);
 }
