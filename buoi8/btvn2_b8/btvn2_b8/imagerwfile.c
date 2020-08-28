@@ -49,23 +49,32 @@ void main()
 	{
 		printf("file da duoc mo thanh cong\r\n");
 	}
-	// tim do lon file 
-	fseek(pt, 0, SEEK_END);
-	int len = ftell(pt);
-	fseek(pt, 0, SEEK_SET);
-	printf("do dai byte cua file pt = %d\r\n", len);
-	// doc file pt
-	readfile(pt);
-	fseek(pt, 0, SEEK_SET);
-	// copy file pt sang cp
-	//copyfile(pt, cp);
-	fseek(cp, 0, SEEK_END);
-	int len1 = ftell(cp);
-	fseek(cp, 0, SEEK_SET);
-	printf("\ndo dai byte cua file cp  = %d\r\n", len1);
-	readfile(cp);
-
-	printf("\ncopy thanh cong \r\n");
+	/*
+			// tim do lon file
+			fseek(pt, 0, SEEK_END);
+			int len = ftell(pt);
+			fseek(pt, 0, SEEK_SET);
+			printf("do dai byte cua file pt = %d\r\n", len);
+			// doc file pt
+			readfile(pt);
+			fseek(pt, 0, SEEK_SET);
+			// copy file pt sang cp
+			//copyfile(pt, cp);
+			fseek(cp, 0, SEEK_END);
+			int len1 = ftell(cp);
+			fseek(cp, 0, SEEK_SET);
+			printf("\ndo dai byte cua file cp  = %d\r\n", len1);
+			readfile(cp);
+	*/
+	int x = 0;
+	while (!feof(pt))
+	{
+		char temp = fgetc(pt);
+		fputc(temp, cp);
+		//printf("%c", temp);
+		x++;
+	}
+	printf("\n do lon file pt : %d\r\n",x);
 
 	fclose(pt);
 	fclose(cp);
