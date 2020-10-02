@@ -7,8 +7,6 @@ float timdelta(int a, int b, int c)
 void ptb2(int a, int b, int c)
 {
 	float delta = 0;
-
-	
 	delta = timdelta(a, b, c);
 
 	if (delta < 0)
