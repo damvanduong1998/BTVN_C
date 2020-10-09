@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include"Socket.h"
 #include<Windows.h>
@@ -13,7 +12,7 @@ WINAPI Ham_thuc_thi(LPVOID IpThreadPrameter)
 		memset(buff_recv, 0, 256);
 		Sleep(1000);
 	}
-	
+
 }
 
 void main()
@@ -29,6 +28,6 @@ void main()
 		memset(buff_send, 0, sizeof(buff_send));
 		Sleep(1000);
 	}
-	
-	
+
+
 }
