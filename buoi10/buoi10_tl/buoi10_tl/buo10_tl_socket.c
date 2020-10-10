@@ -4,10 +4,10 @@
 
 void main()
 {
-	char* severIp = "192.168.5.102";
-	int port = 23;
+	char* severIp = "192.168.19.101";
+	int port = 1234;
 	Socket_Client_Init(severIp,port);
-	Send("Hello form visua\r\n ");
+	Send("ON\r\n ");
 
 	char buff[32] = { 0 };
 	Recv(buff, sizeof(buff));
